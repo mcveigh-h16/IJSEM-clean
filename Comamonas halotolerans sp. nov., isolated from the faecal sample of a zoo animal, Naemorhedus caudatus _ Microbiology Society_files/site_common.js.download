@@ -1,0 +1,559 @@
+var ingentaCMSApp = ingentaCMSApp || {
+    consoleOK: (typeof console === undefined ? false : true),
+    instanceprefix: $('body').data('instanceprefix'),  
+    flipMoreLess: function(evt, selector1, selector2) {
+        var $here = $(evt.target);
+        evt.stopImmediatePropagation();
+        evt.preventDefault();
+        if ($here.hasClass("moreLink")) {
+            $here.parent().siblings(selector2).show();
+            $here.hide();
+            $here.siblings(".lessLink").show();
+        }
+        if ($here.hasClass("lessLink")) {
+            $here.parent().siblings(selector2).hide();
+            $here.hide();
+            $here.siblings(".moreLink").show();
+        }
+    },
+    /**
+     * Changes more or less, second type
+     * 
+     * @param {event}        Click event
+     * @param {string}       Selector 1
+     * @param {string}       Selector 2
+     * 
+     *  */
+    flipMoreLess2: function (evt, selector1, selector2) {
+        var $here = $(evt.target);
+        evt.stopImmediatePropagation();
+        evt.preventDefault();
+        if ($here.hasClass("moreLink2")) {
+            $here.parent().siblings(selector1).find(selector2).show();
+            $here.hide();
+            $here.siblings(".lessLink2").show();
+        }
+        if ($here.hasClass("lessLink2")) {
+            $here.parent().siblings(selector1).find(selector2).hide();
+            $here.hide();
+            $here.siblings(".moreLink2").show();
+        }
+    },
+    /**
+     * Add event logging any PDFs within the location
+     * @param location the part of the DOM where PDF download links can be found
+     */
+    addPdfMessageLogging: function(location) {
+        location.find(".pdf a").click(function(e) {
+           if (_gaq) {
+               _gaq.push(['_trackEvent', 'Download', 'PDF', this.href]);
+           }
+        });
+    },
+    siq: function(siqUrl, webId, pageTitle, doi, eventType, logPub2webEvent, searchTerm, callback) {
+        //if (ingentaCMSApp.consoleOK) {console.info("siq(): " + "\n url: " + siqUrl + "\n webId: " + webId + "\n title: " + pageTitle + "\n DOI: " + doi +  "\n type: " + eventType + "\n log: " + logPub2webEvent + "\n search term: " + searchTerm + "\n callback: " + callback);}
+        if (!searchTerm) {
+            searchTerm = "";
+        }
+        // Pending items should not have any pub2web events logged
+        if ($("#isPending").length > 0) {
+            logPub2webEvent = 'false';
+        }
+        var data = {
+            itemId : webId,
+            pageTitle : pageTitle,
+            doi : doi,
+            eventType : eventType,
+            logPub2webEvent : logPub2webEvent,
+            searchTerm : searchTerm
+        };
+        // A load is required rather than get for the script element to be run by  the browser - similarly no suffixed selector is permitted
+        $("#siqResponse").load(siqUrl, data, function(contents) {
+            if (callback) {
+                callback(contents);
+            }
+        });
+    },
+  /**
+     * Handles the chevron interaction
+     *
+     * @param {jQuery object} $here         Current location
+     */
+    handleChevrons: function($here) {
+
+        if ($here.hasClass("down")) {
+            var $foundChevron = this.findChevronContent($here);
+            $foundChevron.removeClass("hidden"); // KLOC : this remained hidden, so slideup / down was not shown on RWD version, so removed it here.
+            $foundChevron.slideDown();
+            this.changeChevronDirection($here, "down");
+        } else if ($here.hasClass("up")) {
+            this.findChevronContent($here).slideUp();
+            this.changeChevronDirection($here, "up");
+        }
+    },
+    /**
+     * Changes the direction of the chevrons
+     *
+     * @param {jQuery object} $here         Current location
+     * @param {string}        direction     Direction of arrow (down | up)
+     */
+    changeChevronDirection: function($here, direction) {
+        if (direction === "down") {
+            $here.removeClass("down").addClass("up").find("img").attr("src", "/images/aip/chevron_up.gif");
+        } else if (direction === "up") {
+            $here.removeClass("up").addClass("down").find("img").attr("src", "/images/aip/chevron_down.gif");
+        }
+    },
+     /**
+     * Displays small dialog box with variable heading and text
+     *
+     * @param {event object}    Event object
+     * @param {string}          Heading
+     * @param {string}          Anchor
+     * @param {string}          (Short) text message to display
+     * @param {string}          Width of dialog box (optional)
+     * @param {string}          Height of dialog box (optional)
+     * @param {string}          my position (optional)
+     * @param {string}          at position (optional)
+     * @param {string}          include Don't show again & related cookies, string is unique id (optional)
+     * @param {string}          text for a Close button, only shows if this is set  (optional)
+     * @param {string}          URL for destination of button, if null will close dialog
+     */
+    displaySmallDialog: function(e, anchor, heading, text, width, height, myPos, atPos, inclDSAid, inclCBtnText, inclCBtnLink) {
+        var $this = $(e.target),
+            $dialogHook = $(anchor),
+            dWidth = width || 200,
+            dHeight = height || 125,
+            dMyPos = myPos || "left top",
+            dAtPos = atPos || "left bottom",
+            userName = encodeURI($('.signedinas + .signedinas').text());
+        e.preventDefault();
+        if ($dialogHook.length) {
+            $dialogHook.dialog({
+                autoOpen : false,
+                height : dHeight,
+                modal : false,
+                position: {
+                    my: dMyPos,
+                    at: dAtPos,
+                    of: $this
+                },
+                resizable : true,
+                width : dWidth
+            });         
+            $dialogHook.find(".dialogText").remove();
+
+            $dialogHook.dialog().parent(".ui-dialog").wrap("<div class=\"signInOrRegisterWrapper\"></div>");
+            
+            $dialogHook.dialog("open");
+
+            if (heading) {
+                $dialogHook.append("<h2 class=\"dialogText\">" + heading + "</h2>");
+            }
+            if (text) {
+                $dialogHook.append("<span class=\"dialogText\">" + text + "</span>");
+            }
+            if (inclDSAid) {
+                $dialogHook.append("<br/><input id=\"dontShowAgain\" class=\"dialogText dontShowAgain\" type=\"checkbox\" id=\""+inclDSAid+"\" checked /> <label class=\"dialogText\" for=\"dontShowAgain\">Don't show again.</label>");
+                //if checkbox shown, close button is req
+                $dialogHook.append("<button class=\"dialogText dontShowAgain dialog-close\">Close</button>");
+                $('button.dontShowAgain').click(function(e){
+                    if( $('input.dontShowAgain').prop('checked') ){
+                        libCookies.setCookie(inclDSAid+userName, inclDSAid, 'Fri, 31 Dec 9999 23:59:59 GMT')
+                    }
+                });
+                
+            }
+            if (inclCBtnText && !inclCBtnLink) {
+                $dialogHook.append("<span class=\"dialogText\"><br/><button class=\"dialog-close\">" + inclCBtnText + "</button></span>");
+            } else if (inclCBtnText && inclCBtnLink) {
+                $dialogHook.append("<span class=\"dialogText\"><br/><a href=\""+inclCBtnLink+"\"><button >" + inclCBtnText + "</button></a></span>");
+            }
+            
+            //only applies when Close button present
+            $('.dialog-close').click(function(){
+                $dialogHook.dialog("close");
+            });
+        }
+    },
+    /**
+     * Find any content associated with the chevron
+     *
+     * @param {object}   jQuery context
+     */
+    findChevronContent: function(context) {
+        return context.siblings(".chevroncontent").add(context.parent().siblings(".chevroncontent"));
+    },
+    /**
+     * Default term gray text by case
+     */
+    defaultSearchTerm: "Search MBS",
+    defaultSearchTermWithinOption: "Search",
+    defaultAdvSearchTerm: "Enter Keywords/Phrases",
+    defaultRefineTerm: "Refine your search",
+    defaultTopicSearchTerm: "Search within topics",
+    linkItemsList: [],
+    searchBoxArray: ["#quickSearchBox", "#advanced-search-form #value1", "#searchRefineBox", "#topicSearchBox"],
+    defaultFocusAndBlur: function(inputId){
+        var checkTerm;
+        switch( inputId ) {
+            case '#quickSearchBox' :
+                checkTerm = $('#searchBox').hasClass('withinPub') ? AIPApp.defaultSearchTermWithinOption : AIPApp.defaultSearchTerm;
+                break;
+            case '#searchRefineBox' :
+                checkTerm = AIPApp.defaultRefineTerm;
+                break;
+            case '#advanced-search-form #value1' :
+                checkTerm = AIPApp.defaultAdvSearchTerm;
+                break;
+            case '#topicSearchBox' :
+                checkTerm = AIPApp.defaultTopicSearchTerm;
+                break;
+            default:
+                return false;
+        }
+
+        // when you click into box remove default text
+        $(inputId).focus(function() {
+            // Check val for search text
+            var $searchField = $(this);
+
+            if ($searchField.val() ===  checkTerm || $searchField.val() === '') {
+                $searchField.val("");
+                $(inputId).removeClass("defaultTerm");
+            }
+        // add the default text back in if they click out without entering anything
+        }).blur(function() {
+            // Check val for search text
+            var $searchField = $(this);
+            
+            // Check for empty input
+            if ($searchField.val() === "") {
+                $(inputId).addClass("defaultTerm");
+                $searchField.val(checkTerm);
+            }
+        });
+    },
+    goToLocation: function(thislocation) {
+        if (location.pathname.replace(/^\//,'') == thislocation.pathname.replace(/^\//,'') && location.hostname == thislocation.hostname) {
+                // below classes are toggled between mobile and desktop
+  
+            var target = $(thislocation.hash);
+            //redifine 
+            target = target.length ? target : $('[name=' + thislocation.hash.slice(1) +']');
+            
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: (target.offset().top)
+              }, 1500);
+              return false;
+            }
+        }
+    },
+    displayElipsisDescription: function() {
+        
+        //in the case when there is no description to elipses make sure the description box is still hidden!
+        $('.js-browse-item .js-description:not(:has(.js-desc))').addClass('hiddenElement'); 
+        
+        //ok lets get rid of all the HTML formating in the description.
+        var descNode = $('.js-browse-item .js-desc');
+        
+        descNode.each(function( index ) {
+            $(this).html($(this).text());
+        });
+     
+
+   
+        descNode.ellipsis({
+            row: 3,
+            char: ' Read More',
+            callback: function() {
+                var ithis = $(this),
+                    itext = ithis.text(),
+                    readMoreURL = ithis.closest('.js-browse-item').find('.js-articleTitle').children('a').attr('href'), //all otherpages
+                    readMoreURLAlt = function() { return ithis.closest('.js-browse-item').find('.js-title').children('a').attr('href') }, //search page only
+                    replaceHTML = $("<a href='" + (readMoreURL ? readMoreURL : readMoreURLAlt()) + "' class='readmore'>Read More</a>");
+                    ithis.html(itext.replace('Read More', replaceHTML.prop('outerHTML')));
+                    
+
+                    
+                    ithis.addClass('makevisible')
+                        .parent('.js-description')
+                           .addClass('hiddenElement');
+
+                
+            }
+        });
+
+    },
+   goToHashAnchor: function(elmentToGoTo, offsetPixels) {
+       //note this function expects a jQuery object that pertains to the element on the page to navigate to.
+       var elementsToTest = $('body').data('elementsToOffsetScrollWhenFixed');
+       //console.log('elements To Test:' + elementsToTest);
+       
+       var fixedheaderheight = 0;
+       $(elementsToTest).each(function(){ 
+           ($(this).css('position') == 'fixed' || $(this).css('position') == 'sticky')  && 
+                   (fixedheaderheight += $(this).height()) 
+        });
+       
+       offsetPixels = offsetPixels ?  offsetPixels : 10 //default Pixel Offset is 10px
+          
+       $('html,body').animate({
+         scrollTop: elmentToGoTo.offset().top - (fixedheaderheight + offsetPixels) //offset height of header here too.
+       }, 1000);
+    },
+   showAdvertDialog: function () {
+       var mdl = $("#myModal");
+       mdl.empty();
+       mdl.load($("#hiddenContext").text() + "/overlay/content", {}, function() {
+           mdl.modal('show');
+       });
+   },
+   appendCSRFHiddenToken: function() {
+       //this is used to create a hidden form field that is used to verify 
+       //a form submission is done on the site and not by a third party site. 
+       // we are re-using re-capatcha functionality for this purpose.
+        $('.tokenCSRF_HiddenValue').each(function() {
+            let tokenId = ($(this).text()).trim();
+            if (tokenId.length > 2){
+                $(this).replaceWith('<input type="hidden" value="'+ tokenId + '" name="timer_id" id="timer_id" />')
+            }
+        })
+   }
+};
+
+
+
+//this file is new for the global JS that is shared across template skins.
+$(document).ready(function() { 
+  //this is currently used on the inaccessible content page
+    $('.js-display-global-dialog').on("click",function(e){
+        ingentaCMSApp.showAdvertDialog();
+    }); 
+    //uses new tiny cookie lib script added to plugins.js
+    const lightboxCookieName = Cookies.get('lightboxAdvert');
+    const lightboxCookieNameToCheck = $('meta[name=siteWideLightbox]').data('cookiename');
+    
+    if (lightboxCookieNameToCheck && lightboxCookieNameToCheck !== lightboxCookieName) {
+        ingentaCMSApp.showAdvertDialog();
+        //set cookie but only on the closing of the dialog box. This forces the user to acknowledge it first. 
+        $('#myModal').on('hidden.bs.modal', function (e) {
+            Cookies.set('lightboxAdvert', lightboxCookieNameToCheck, { expires: 256 });
+        });
+    }
+(function(){
+   //we are currently only supporting the use of an image and 
+     //italised element used in (font-awesome) or a html5 button
+     //element. It is done is this way ie by referencing the element to allow the content to be blurb editable
+    var ftDownloadLinkElemnts = '.js-ft-download-form img:not([alt="edit"]), ' +
+    '.js-ft-download-form img:not([alt="edit"]) + span, ' +
+    '.js-ft-download-form i:not(:contains("create")), ' +
+    '.js-ft-download-form i:not(:contains("create")) + span, ' +
+    '.js-ft-download-form button';
+  //ftItems only appear in the main content container 
+  // (use event delegation as listing pages add fulltext download icon via Ajax)    
+  $('main').on('click', ftDownloadLinkElemnts,  function (event) {
+       $(this).closest('form')
+                  .not('.ft-download-form--disabled').submit();
+      
+      //this will stop the button auto submitting the form.
+      event.preventDefault();
+      
+  }).on('mouseenter', ftDownloadLinkElemnts, function (event) { 
+          var thisTitle =  $(this).closest('form').data('title');
+          $(this).attr('title', thisTitle)
+                 .off('mouseenter');
+          
+  });
+
+  var cookieValue = libCookies.getCookie("JSESSIONID");
+  if (cookieValue && cookieValue.indexOf("x-sgm-live") != -1) {
+    var context = $("#hiddenContext").text();
+    if (context.length == 0) {
+      context = "/";
+    }
+    libCookies.removeCookie("JSESSIONID", context, ".microbiologyresearch.org");
+    window.location.href = context;
+  }
+ })($);
+    
+
+    $(document).on('click', '#toolsDropdownContainer .dropdown-menu', function (e) {
+        e.stopPropagation();
+      });
+    
+    $(document).on('click', '#shareDropdownContainer .dropdown-menu', function (e) {
+        e.stopPropagation();
+      });
+    
+    $(".js-main-content-container").on('click', '.menuLink', function () {
+        var ithis = $(this);
+        var divIDelement = $(ithis.attr('href'));
+        var articleNavBar = $('.is-hybrid-skin-template .article-navigation-bar');
+        if (divIDelement.length) {
+            
+            if (divIDelement.is(":hidden")){
+                //trigger HTML Fulltext to be shown when the 
+                //element is hidden it should mean the tab is not selected.
+                $('#html_tab a').trigger('click');
+            }
+
+            //this is for the existing FT menus to close them after they 
+            // have been opened as was happening with previous behaviour. 
+            ithis.closest('.dropDownMenu').hide();
+               
+            ingentaCMSApp.goToHashAnchor(divIDelement, 15);
+
+            return false;
+        }
+    });
+    
+
+    $(".js-dropdown-toggle").on("click",function(e){
+        //stop browser default.
+        e.preventDefault();
+    });
+
+    //meant to handle only blurb pages for now
+    $(".usercreatedpage a").on("click", function(){
+	var divID = $(this).attr('href');
+        var divIDElement = $(divID);
+        if (divIDElement) {
+          ingentaCMSApp.goToHashAnchor(divIDElement, 0);
+        }
+    });
+    
+    // this is for the email template page
+    $("#useradmintemplate #eic-jump-menu").on("click", "a", function(e){
+        e.preventDefault();
+        var divElem = $($(this).attr('href'));
+            if (divElem){
+                ingentaCMSApp.goToHashAnchor(divElem);
+            }
+    });
+
+    //meant for skip to content accessible links
+    $(".js-skip-content").on("click", function(){
+            var elementTargetID = $(this).attr('href');
+            var jQueryElement = $(elementTargetID);
+            if (jQueryElement) {
+              ingentaCMSApp.goToHashAnchor(jQueryElement, 0);
+            }
+    });
+
+    //meant to handle only inline references and datamedia section for now
+    $("#html_fulltext, #dataandmedia").on("click", "a:not(.js-toggle-table)", function(event){
+       var divID = $(this).attr('href');
+       if(divID.startsWith("#") && divID !== '#') {
+           var divIDElement = $(divID);
+           if (divIDElement) {
+             event.stopImmediatePropagation();
+             ingentaCMSApp.goToHashAnchor(divIDElement, 3);
+           }
+      }
+    });
+
+    $("#supplementary_Tab").find("a").click(function(e) {
+
+        if ($("#figshare_widget_container").size() > 0) {
+              var container = document.getElementById("figshare_widget_container");
+              var publisherId = $("#figshare_widget_container").data("publisher");
+              figshare.load(publisherId, function(Widget) {
+
+	              var widget = new Widget({
+	                  version: "3",
+	                  height: 550,
+	                  showStats: true,
+	                  showPageInfo: false,
+	                  showShareButton: true,
+	                  showFileDetails: false,
+	                  item: {
+	                       resourceDOI: $("#figshare_widget_container").data("doi")
+	                  }
+                 });
+
+              // Widget was mounted into the container element.
+              widget.on("mount", function() {
+              });
+
+              // Widget has successfully loaded the minimum files and can be displayed
+              widget.on("canDisplay", function() {
+              });
+              widget.initialize();
+              $(".figshareDataLoading").remove();
+              widget.mount(container);
+
+              });
+        }  
+    });   
+});
+
+// Based on some MDN code
+var libCookies = {
+    earliestDate: "Thu, 01 Jan 1970 00:00:00 GMT",
+    latestDate: "Fri, 31 Dec 9999 23:59:59 GMT",
+    /**
+     * Gets a cookie with various parameters...
+     *
+     * @param {string}        Cookie name
+     */
+    getCookie: function (cName) {
+        return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(cName).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+    },
+    /**
+     * Sets a cookie with various parameters...
+     *
+     * @param {string}        Cookie name
+     * @param {string}        Cookie value
+     * @param {number | date} Cookie age or expiry date
+     * @param {string}        Cookie path
+     * @param {string}        Cookie domain
+     * @param {true | false}  Flag indicating secure (or not)
+     */
+    setCookie: function (cName, cValue, cEnd, cPath, cDomain, cSecure) {
+        var sExpires = "";
+        // Disallow no name or cookie keywords as names
+        if (!cName || /^(?:expires|max\-age|path|domain|secure)$/i.test(cName)) {
+            return false;
+        }
+        if (cEnd) {
+            // How is the end point defined?
+            switch (cEnd.constructor) {
+            case Number:
+                sExpires = cEnd === Infinity ? ";expires=" + libCookies.latestDate : ";max-age=" + cEnd;
+                break;
+            case String:
+                sExpires = ";expires=" + cEnd;
+                break;
+            case Date:
+                sExpires = ";expires=" + cEnd.toUTCString();
+                break;
+            }
+        }
+        document.cookie = encodeURIComponent(cName) + "=" + encodeURIComponent(cValue) + sExpires + (cDomain ? ";domain=" + cDomain : "") + (cPath ? ";path=" + cPath : "") + (cSecure ? ";secure" : "");
+        return true;
+    },
+    /**
+     * Removes a cookie
+     *
+     * @param {string}        Cookie name
+     * @param {string}        Cookie path
+     * @param {string}        Cookie domain
+     */
+    removeCookie: function (cName, cPath, cDomain) {
+        if (!cName || !this.hasCookie(cName)) {
+            return false;
+        }
+        document.cookie = encodeURIComponent(cName) + "=;expires=" + libCookies.earliestDate + ( cDomain ? ";domain=" + cDomain : "") + ( cPath ? ";path=" + cPath : "");
+        return true;
+    },
+    /**
+     * Checks that a cookie exists
+     *
+     * @param {string}        Cookie name
+     */
+    hasCookie: function (cName) {
+        return (new RegExp("(?:^|;\\s*)" + encodeURIComponent(cName).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
+    }
+};

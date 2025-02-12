@@ -1,0 +1,1022 @@
+/* add body so style sheet can be used on its own.*/
+/* Branding for fulltext HTML content when it is displayed within a tab */
+/* resets some NLM styles */
+.itemFullTextHtml hr.part-rule,
+.itemFullTextHtml hr.section-rule {
+  color: #666;
+  height: 1px;
+}
+.itemFullTextHtml .li-title,
+.itemFullTextHtml .tl-default,
+.itemFullTextHtml .tl-lowest-section,
+.itemFullTextHtml .tl-section-level,
+.itemFullTextHtml .tl-main-part,
+.itemFullTextHtml .tl-document,
+.itemFullTextHtml h1,
+.itemFullTextHtml h2 {
+  color: #39392A;
+}
+.itemFullTextHtml .tl-document,
+.itemFullTextHtml h1 {
+  font-size: 1.5em;
+  text-align: center;
+}
+.itemFullTextHtml .tl-main-part,
+.itemFullTextHtml h2 {
+  font-size: 1.1em;
+}
+.itemFullTextHtml .tl-section-level {
+  font-size: 1.2em;
+}
+.itemFullTextHtml .tl-lowest-section,
+.itemFullTextHtml .li-title,
+.itemFullTextHtml .tl-default {
+  font-size: 1.1em;
+}
+.itemFullTextHtml .tl-lowest-section {
+  padding-top: 10px;
+}
+.itemFullTextHtml h2 {
+  color: gray;
+}
+.itemFullTextHtml ul.flat,
+.itemFullTextHtml ul.flat li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.itemFullTextHtml ul.flat {
+  margin-bottom: 13px;
+}
+.itemFullTextHtml ul.authors li,
+.itemFullTextHtml ul.affiliations li,
+.itemFullTextHtml ul.keywords li {
+  display: inline;
+}
+.itemFullTextHtml dl.abstract * {
+  margin: 0;
+  padding: 0;
+}
+.itemFullTextHtml dl.abstract dd {
+  margin-bottom: 10px;
+}
+.itemFullTextHtml dl.abstract dt {
+  float: left;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.itemFullTextHtml strong,
+.itemFullTextHtml dt {
+  color: #39392A;
+}
+/* Position inline formulae nicely */
+.itemFullTextHtml img.inline-formula {
+  vertical-align: middle;
+}
+/* Position other formulae centered on page */
+.itemFullTextHtml img.disp-formula {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.itemFullTextHtml .articleSection p sub,
+.itemFullTextHtml .articleSection p sup {
+  line-height: 0;
+}
+.itemFullTextHtml .comment {
+  display: none;
+}
+/* additional styles for top branding bar */
+.itemFullTextHtml #wrap {
+  padding: 15px 100px;
+}
+.itemFullTextHtml .sectionDivider {
+  background-color: #EBEBEB;
+  padding: 5px 0px;
+  border: 1px solid #ccc;
+}
+.is-altlayout-enabled 
+.itemFullTextHtml .sectionDivider {
+	background-color: #fff;
+}
+.itemFullTextHtml .sectionDivider .top-section-link {
+  display: none !important;
+}
+.itemFullTextHtml .top-section-link {
+  display: none !important;
+}
+.itemFullTextHtml .dropDownMenu {
+  float: right;
+  border: 1px solid #EBEBEB;
+  color: #808080;
+  border-top: none;
+  display: none;
+  padding: 10px 15px;
+  margin-left: 5px;
+}
+.itemFullTextHtml .dropDownMenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.itemFullTextHtml .dropDownMenu a:link {
+  text-decoration: none;
+  color: #808080;
+}
+.itemFullTextHtml .dropDownMenu a:visited {
+  text-decoration: none;
+  color: #808080;
+}
+.itemFullTextHtml .dropDownMenu a:hover {
+  text-decoration: none;
+  color: #0000ff;
+}
+.itemFullTextHtml .menuButton {
+   float: right;
+  clear: right;
+  font-size: 0.9em;
+  color: #167DA2;
+  padding: 3px 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  text-transform: uppercase;
+}
+.is-altlayout-enabled.is-hybrid-skin-template 
+.itemFullTextHtml .menuButton {
+  display: none;
+}
+.is-altlayout-enabled.is-hybrid-skin-template
+.itemFullTextHtml .sectionDivider {
+    border:0;
+}
+
+.itemFullTextHtml .sectionDivider .title {
+  clear: left;
+  float: left;
+}
+.itemFullTextHtml .clearer {
+  clear: both;
+  line-height: 0;
+}
+.itemFullTextHtml .figure {
+  font-size: 1em;
+}
+.itemFullTextHtml .figure .image {
+  float: left;
+  clear: left;
+  margin-left: 20px;
+  text-align: center;
+}
+.itemFullTextHtml .figure .caption {
+  margin-left: 200px;
+}
+.itemFullTextHtml .figure .image a:link {
+  text-decoration: none;
+}
+.itemFullTextHtml .figure .image a:visited {
+  text-decoration: none;
+}
+.itemFullTextHtml .correspondence {
+  margin-bottom: 10px;
+}
+.itemFullTextHtml .caption .captionLabel {
+  font-weight: bold;
+}
+.itemFullTextHtml .capture-id .tableLabel {
+  background-color: #cccccc;
+  padding: 5px 0px;
+}
+.itemFullTextHtml .tableWrap {
+  padding: 15px 10px;
+}
+.itemFullTextHtml img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+.itemFullTextHtml .article-header-metadata,
+.itemFullTextHtml .book-header-metadata {
+  display: none;
+}
+.itemFullTextHtml #article-level-0-front-and-body .article-title-and-authors .articleSection,
+.itemFullTextHtml .article-title,
+.itemFullTextHtml #article-level-0-front-and-body .article-title-and-authors .authors,
+.itemFullTextHtml .article-title-and-authors .au-label,
+.itemFullTextHtml .article-title-and-authors .affiliations,
+.itemFullTextHtml .book-title-and-authors,
+.itemFullTextHtml .correspondence,
+.itemFullTextHtml .author-footnote {
+  display: none;
+}
+/* Abstract requested specifically for book */
+.itemFullTextHtml .book-abstract {
+  display: block;
+}
+span.references ol.references li {
+  list-style-type: none;
+  padding-bottom: 4px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+span.references ol.references {
+  padding-left: 10px;
+}
+hr.part-rule,
+hr.section-rule {
+  color: #666;
+  height: 1px;
+}
+.li-title,
+.tl-default,
+.tl-lowest-section,
+.tl-section-level,
+.tl-main-part,
+.tl-document {
+  color: #39392A;
+}
+.tl-document {
+  font-size: 1.5em;
+  text-align: center;
+}
+.tl-main-part {
+  font-size: 1.3em;
+}
+.tl-section-level {
+  font-size: 1.2em;
+}
+.tl-lowest-section,
+.li-title,
+.tl-default {
+  font-size: 1.1em;
+}
+.tl-lowest-section {
+  padding-top: 10px;
+}
+/* Position inline formulae nicely */
+img.inline-formula {
+  vertical-align: middle;
+}
+/* Position other formulae centered on page */
+img.disp-formula {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.articleSection p sub,
+.articleSection p sup {
+  line-height: 0;
+}
+.articleSection {
+  margin-bottom: 10px;
+}
+.comment {
+  display: none;
+}
+.sectionDivider {
+  padding: 5px 0px;
+}
+
+.dropDownMenu {
+  float: right;
+  border: 1px solid #cccccc;
+  color: #808080;
+  border-top: none;
+  display: none;
+  padding: 10px 15px;
+  margin-left: 5px;
+}
+.dropDownMenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dropDownMenu a:link {
+  text-decoration: none;
+  color: #808080;
+}
+.dropDownMenu a:visited {
+  text-decoration: none;
+  color: #808080;
+}
+.dropDownMenu a:hover {
+  text-decoration: none;
+  color: #0000ff;
+}
+.sectionDivider .title {
+  clear: left;
+  float: left;
+}
+.meta-list .correspondence {
+  margin-bottom: 10px;
+}
+/* Additional over-rides for replacement classes in NLM */
+.jp-bold {
+  font-weight: bold;
+}
+.jp-italic {
+  font-style: italic;
+}
+.jp-small {
+  font-variant: small-caps;
+}
+.jp-strike {
+  text-decoration: line-through;
+}
+.jp-sub {
+  font-size: 0.83em;
+  vertical-align: sub;
+}
+.jp-sup {
+  font-size: 0.83em;
+  vertical-align: super;
+}
+.jp-underline {
+  text-decoration: underline;
+}
+.jp-w100 {
+  width: 100%;
+}
+.jp-w60 {
+  width: 60%;
+}
+.jp-border1 {
+  border: solid 1px black;
+}
+.jp-border4 {
+  border: solid 4px black;
+}
+.jp-td1 {
+  padding: 1px;
+}
+.jp-td5 {
+  padding: 5px;
+}
+/* front-matter */
+.fm {
+  font-size: 9pt;
+  line-height: 1.5;
+}
+/* back-matter */
+.bm {
+  font-size: 9pt;
+  line-height: 1.5;
+}
+/* rules */
+hr.part-rule {
+  color: red;
+  width: 50%;
+  text-align: center;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+hr.section-rule {
+  color: black;
+  width: 50%;
+  text-align: center;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+/* generated text */
+.gen {
+  color: gray;
+}
+/* --------------- Titling levels -------------------- */
+/* titling level 1: document title */
+.tl-document {
+  display: block;
+  font-size: 18pt;
+  font-weight: bold;
+  line-height: 140%;
+  text-align: center;
+}
+/* titling level 2: main document parts */
+.tl-main-part {
+  display: block;
+  font-weight: bold;
+  line-height: 130%;
+}
+/* titling level 3: first-level sections of main parts */
+.tl-section-level {
+  display: block;
+  font-size: 14pt;
+  font-weight: bold;
+  line-height: 130%;
+}
+/* titling level 4: lowest designed level */
+.tl-lowest-section {
+  display: block;
+  font-weight: bold;
+  line-height: 130%;
+}
+/* Bug#49339 - tl-default may be second level or third level thanks to the Keton-era content */
+/* tl-default at third level - italic */
+div > .tl-lowest-section ~ div > .tl-default {
+  display: block;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 130%;
+  margin-top: 5pt;
+}
+/* tl-default at second level - bold */
+.tl-default {
+  display: inline;
+  font-weight: bold;
+  line-height: 130%;
+  margin-top: 5pt;
+  font-size: 1em;
+  padding-right: 5px;
+}
+/* text decoration */
+.monospace {
+  font-family: monospace;
+}
+.overline {
+  text-decoration: overline;
+}
+.take-note {
+  color: red;
+}
+.au-label {
+  vertical-align: super;
+  font-size: 7pt;
+}
+/* Hide the au-label on affiliations, as we display our own label */
+.affiliations .au-label {
+  display: none;
+}
+/* We need to ensure that the paragraph is displayed on the same line as the label for article notes */
+.article-notes .au-label + p {
+  display: inline-block;
+}
+.fn-label {
+  vertical-align: super;
+  font-size: 7pt;
+}
+.label {
+  font-weight: bold;
+}
+.li-title {
+  font-weight: bold;
+  font-size: 11pt;
+  margin-left: 2em;
+}
+#chapter div > span.tl-lowest-section + p {
+  display: inherit;
+}
+div.article-section > div.article-section ~ div {
+  margin-top: 10px;
+}
+/* start of changes made for bug 36654 being carefull not to mess things up for other content type's*/
+#tableContainer .dialogCitationLabel,
+#figureContainer .dialogCitationLabel {
+  display: none;
+}
+#chapter .tableSmallImageContainer,
+#chapter .tableSmallImageContainer + .tabDesc,
+#chapter .citationinfo {
+  float: left;
+  clear: both;
+}
+#chapter .table h5.tabTitle {
+  margin-bottom: 0;
+  /*margin-top:15px;*/
+}
+#chapter .tableSmallImageContainer + .tabDesc,
+#chapter .citationinfo {
+  margin: 5px 0;
+}
+#chapter .singleTableContainer {
+  /*border:none;*/
+}
+/*#chapter .figureCaptionContainer {
+    width:auto; 
+}*/
+.itemFullTextHtml div.bio-para {
+  float: left;
+}
+/* permissions and reprint links in the figures tab */
+img[alt="Permissions and Reprints"] {
+  border: none;
+}
+.permissions {
+  float: right;
+  width: 70%;
+}
+input[alt="Download as Powerpoint"] {
+  padding-left: 0px;
+  margin-left: -12px;
+}
+.click2view {
+  width: 140px;
+  text-align: center;
+}
+#pptdownloadForm {
+  padding-bottom: 10px;
+}
+#pptImageLink {
+  color: #2459BE;
+}
+#pptImageLink:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.tabTitle {
+  text-transform: uppercase;
+}
+#html-body .label {
+  color: #333;
+  font-size: 100%;
+}
+#html-body a:link .label,
+#html-body a:active .label,
+#html-body a:visited .label {
+  color: #428bca;
+  font-size: 100%;
+}
+.affiliation-details .affiliations {
+  display: block;
+}
+.label {
+  white-space: normal;
+  padding: 0;
+}
+.tl-main-part.title a,
+.tl-main-part.title a:link,
+.tl-main-part.title a:visited,
+.tl-main-part.title a:active,
+.tl-main-part.title a:hover {
+  font-weight: normal;
+  text-decoration: none;
+  color: #2F2F2F;
+  line-height: 1.7em;
+  font-weight:bold;
+}
+.articleSection > .articleSection {
+  margin: 10px 0;
+}
+.articleSection > .activemenu {
+  position: relative;
+  z-index: 100;
+}
+#article .capture-id {
+  margin: 1em 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+#article .article-abbreviations .capture-id {
+  text-align: left;
+}
+#article .article-abbreviations .tl-main-part {
+  font-size: 16px;
+  font-weight: bold;
+  width: 60%;
+  line-height: 22.85px;
+  border-left: 1px solid #2F2F2F;
+  border-top: 1px solid #2F2F2F;
+  padding-left: 6px;
+  border-right: 1px solid #2F2F2F;
+}
+#article .capture-id > .label {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#multimediadialog .tl-default {
+  font-weight: normal;
+}
+.popover-content {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.popover-content .image {
+  display: none;
+}
+/* start of figure CSS code! */
+.itemFullTextHtml .html-fulltext-responsive-figure {
+  width: 100%;
+  padding: 10px 10px 0;
+  background: #f2f2f2;
+  margin: 15px 0; 
+}
+.itemFullTextHtml .html-fulltext-responsive-figure .image {
+  position: relative;
+  min-height: 1px;
+  margin: 0 auto;
+  float: none !important;
+}
+.itemFullTextHtml .html-fulltext-responsive-figure .image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 10px;
+}
+.itemFullTextHtml .html-fulltext-responsive-figure .caption {
+  font-size: 14px;
+  margin-left: 0;
+  position: relative;
+  min-height: 1px;
+  margin: 0 auto;
+  float: none !important;
+}
+.itemFullTextHtml .html-fulltext-responsive-figure .captionLabel {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 0;
+}
+.itemFullTextHtml .html-fulltext-responsive-figure .caption {
+  font-size: 14px;
+}
+.itemFullTextHtml .html-fulltext-responsive-figure .caption .captionText {
+  text-align: left;
+}
+.itemFullTextHtml .html-fulltext-responsive-figure .figure-duplicate-label {
+  display: none;
+}
+/* start Table CSS code! */
+table.html-fulltext-inline-table {
+  max-width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+  overflow-x: auto;
+  min-height: 0.01%;
+  width: 100%;
+}
+table.html-fulltext-inline-table > thead > tr > th,
+table.html-fulltext-inline-table > tbody > tr > th,
+table.html-fulltext-inline-table > tfoot > tr > th,
+table.html-fulltext-inline-table > thead > tr > td,
+table.html-fulltext-inline-table > tbody > tr > td,
+table.html-fulltext-inline-table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.5;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+table.html-fulltext-inline-table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+}
+table.html-fulltext-inline-table > caption + thead > tr:first-child > th,
+table.html-fulltext-inline-table > colgroup + thead > tr:first-child > th,
+table.html-fulltext-inline-table > thead:first-child > tr:first-child > th,
+table.html-fulltext-inline-table > caption + thead > tr:first-child > td,
+table.html-fulltext-inline-table > colgroup + thead > tr:first-child > td,
+table.html-fulltext-inline-table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+table.html-fulltext-inline-table > tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+table.html-fulltext-inline-table .table {
+  background-color: #ffffff;
+}
+table.html-fulltext-inline-table > thead > tr > th,
+table.html-fulltext-inline-table > tbody > tr > th,
+table.html-fulltext-inline-table > tfoot > tr > th,
+table.html-fulltext-inline-table > thead > tr > td,
+table.html-fulltext-inline-table > tbody > tr > td,
+table.html-fulltext-inline-table > tfoot > tr > td {
+  border: 1px solid #dddddd;
+}
+table.html-fulltext-inline-table > thead > tr > th,
+table.html-fulltext-inline-table > thead > tr > td {
+  border-bottom-width: 2px;
+}
+table.html-fulltext-inline-table > thead > tr > th,
+table.html-fulltext-inline-table > tbody > tr > th,
+table.html-fulltext-inline-table > tfoot > tr > th,
+table.html-fulltext-inline-table > thead > tr > td,
+table.html-fulltext-inline-table > tbody > tr > td,
+table.html-fulltext-inline-table > tfoot > tr > td {
+  padding: 5px;
+}
+table.html-fulltext-inline-table > tbody > tr:hover {
+  background-color: #f5f5f5;
+}
+@media screen and (max-width: 767px) {
+  table.html-fulltext-inline-table {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #dddddd;
+  }
+  table.html-fulltext-inline-table > .table {
+    margin-bottom: 0;
+  }
+  table.html-fulltext-inline-table > .table > thead > tr > th,
+  table.html-fulltext-inline-table > .table > tbody > tr > th,
+  table.html-fulltext-inline-table > .table > tfoot > tr > th,
+  table.html-fulltext-inline-table > .table > thead > tr > td,
+  table.html-fulltext-inline-table > .table > tbody > tr > td,
+  table.html-fulltext-inline-table > .table > tfoot > tr > td {
+    white-space: nowrap;
+  }
+  table.html-fulltext-inline-table > .table-bordered {
+    border: 0;
+  }
+  table.html-fulltext-inline-table > .table-bordered > thead > tr > th:first-child,
+  table.html-fulltext-inline-table > .table-bordered > tbody > tr > th:first-child,
+  table.html-fulltext-inline-table > .table-bordered > tfoot > tr > th:first-child,
+  table.html-fulltext-inline-table > .table-bordered > thead > tr > td:first-child,
+  table.html-fulltext-inline-table > .table-bordered > tbody > tr > td:first-child,
+  table.html-fulltext-inline-table > .table-bordered > tfoot > tr > td:first-child {
+    border-left: 0;
+  }
+  table.html-fulltext-inline-table > .table-bordered > thead > tr > th:last-child,
+  table.html-fulltext-inline-table > .table-bordered > tbody > tr > th:last-child,
+  table.html-fulltext-inline-table > .table-bordered > tfoot > tr > th:last-child,
+  table.html-fulltext-inline-table > .table-bordered > thead > tr > td:last-child,
+  table.html-fulltext-inline-table > .table-bordered > tbody > tr > td:last-child,
+  table.html-fulltext-inline-table > .table-bordered > tfoot > tr > td:last-child {
+    border-right: 0;
+  }
+  table.html-fulltext-inline-table > .table-bordered > tbody > tr:last-child > th,
+  table.html-fulltext-inline-table > .table-bordered > tfoot > tr:last-child > th,
+  table.html-fulltext-inline-table > .table-bordered > tbody > tr:last-child > td,
+  table.html-fulltext-inline-table > .table-bordered > tfoot > tr:last-child > td {
+    border-bottom: 0;
+  }
+}
+table.html-fulltext-inline-table th[align="center"],
+table.html-fulltext-inline-table td[align="center"] {
+  text-align: center;
+}
+table.html-fulltext-inline-table th[align="right"],
+table.html-fulltext-inline-table td[align="right"] {
+  text-align: right;
+}
+table.html-fulltext-inline-table tbody td:not([colspan="1"]) {
+  background-color: #f9f9f9;
+}
+table.html-fulltext-inline-table tfoot tr td {
+  background-color: #fff;
+  text-align: left;
+  border: none;
+}
+table.html-fulltext-inline-table th[valign="top"],
+table.html-fulltext-inline-table td[valign="top"] {
+  vertical-align: top !important;
+}
+table.html-fulltext-inline-table th[valign="middle"],
+table.html-fulltext-inline-table td[valign="middle"] {
+  vertical-align: middle !important;
+}
+table.html-fulltext-inline-table th[valign="top"],
+table.html-fulltext-inline-table td[valign="top"] {
+  vertical-align: top !important;
+}
+/* Don't display caption when table is shown in fulltext tab pane we are displaying it above! */
+.tab-pane .table-container table caption {
+  display: none;
+}
+.is-table-copy {
+  width: 100%;
+}
+.is-table-copy caption {
+  padding: 10px;
+  border: 1px solid #ccc;
+  color: #444;
+  background-color: #EBEBEB;
+  margin-bottom: 20px;
+}
+.is-table-copy caption .toggle-table {
+  font-size: 14px;
+  font-weight: 700;
+}
+.table-caption-container {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  color: #444;
+  background-color: #EBEBEB;
+  margin-bottom: 20px;
+  position: relative;
+}
+.table-caption-container .toggle-table {
+  font-size: 14px;
+  font-weight: 700;
+}
+.table-caption-container .table-placeholder-image {
+  float: left;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+.table-caption-container .table-cell + .table-caption-container-inner {
+  margin-left: 160px;
+}
+.table-container {
+  overflow: auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #ffffff;
+}
+.table-container h5 {
+  font-size: 16px;
+}
+#tableFullscreen input {
+  float: left;
+  margin: 10px;
+}
+#tableFullscreen .table-container {
+  float: left;
+  clear: both;
+}
+#tableFullscreen div.table-container {
+  width: 100%;
+}
+@media (max-width: 470px) {
+  .open-table-fullscreen {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+@media print {
+  .itemFullTextHtml .menuButton,
+  .itemFullTextHtml .dropDownMenu {
+    display: none;
+  }
+}
+
+
+.reference {
+    display: block;
+    line-height: 1.5em;
+    margin: 0.25em 0 0 2.75em;
+    text-align: left;
+    text-indent: -2.75em;
+}
+.refauth {
+    font-weight: bold;
+}
+.refline {
+    text-indent: -3.5em;
+}
+.reference-year-apa {
+}
+.reference-person-group-apa {
+    font-weight: bold;
+}
+.refline {
+    text-indent: -2.5em;
+        margin-left:3em;
+}
+.reference-year-apa {
+        font-weight:bold;
+        color: #253776;
+}
+
+.reference-source-apa {
+        font-style:italic;
+}
+.refseries {
+}
+
+.singleref {
+        margin-bottom:.5em;
+}
+
+.refrole {
+    position:absolute;
+    left:-2.75em;
+    float:left;
+}
+.labelref .refrole, .inline-cit .refrole, .inline-fn .ref-role {
+    position:static;
+    float:none;
+}
+.firstref {
+        margin-bottom:0;
+        }
+.nextref {
+        margin-top: 0;
+        margin-bottom:0;
+}
+.lastref {
+        margin-top: 0;
+}
+
+.otherref{
+        text-indent: -2.75em;
+        margin-left:0;
+}
+.labelref {
+    text-indent:0;
+}
+.edited {
+        text-indent: -6em;
+}
+
+.space {
+        display:inline-block;
+        width:.33em;
+}
+
+.graphical-abstract .figure {
+		font-size: 0.8em
+}
+.graphical-abstract .figure .image {
+	float:left;
+	clear:left;
+	margin-left: 20px;
+	text-align:center;
+}
+.graphical-abstract .figure .caption {
+	margin-left: 200px;
+}
+.graphical-abstract .figure .image a:link {
+	text-decoration:none;
+	
+}
+.graphical-abstract .figure .image a:visited {
+	text-decoration:none;	
+}
+
+.graphical-abstract .html-fulltext-responsive-figure {
+  width: 100%;
+  padding: 10px 10px 0;
+  background: #f2f2f2;
+  margin: 15px 0; 
+}
+.graphical-abstract .html-fulltext-responsive-figure .image {
+  position: relative;
+  min-height: 1px;
+  margin: 0 auto;
+  float: none !important;
+}
+.graphical-abstract .html-fulltext-responsive-figure .image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 10px;
+}
+.graphical-abstract .html-fulltext-responsive-figure .caption {
+  font-size: 14px;
+  margin-left: 0;
+  position: relative;
+  min-height: 1px;
+  margin: 0 auto;
+  float: none !important;
+}
+.graphical-abstract .html-fulltext-responsive-figure .captionLabel {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 0;
+}
+
+.graphical-abstract .html-fulltext-responsive-figure .captionLabel span{
+  font-size: 100%;
+  color: black;
+}
+
+.graphical-abstract .html-fulltext-responsive-figure .caption {
+	margin-left: 200px;
+  font-size: 14px;
+}
+.graphical-abstract .html-fulltext-responsive-figure .caption .captionText {
+  text-align: left;
+}
+.graphical-abstract .html-fulltext-responsive-figure .figure-duplicate-label {
+  display: none;
+}
+
+.graphical-abstract .html-fulltext-responsive-figure .figure-duplicate-label {
+  display: none;
+  text-decoration: none;
+}
+
+.graphical-abstract .html-fulltext-responsive-figure .figure-duplicate-label {
+  display: none;
+  text-decoration: none;
+}
+
+.graphical-abstract .html-fulltext-responsive-figure a:hover{
+  text-decoration: none;
+}
+
+.graphical-abstract .html-fulltext-responsive-figure a p{
+  text-align: center;
+}
+
+.htmlfulltext a {
+    text-decoration: underline;
+}
+
+
+
