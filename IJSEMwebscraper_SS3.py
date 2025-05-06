@@ -13,9 +13,8 @@ import sys
 
 import selenium
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-#PATH = "C:\Users\mcveigh\Documents\PythonPC\chrome.exe"
-#driver = webdriver.Chrome(PATH)
 from selenium.webdriver.chrome.options import Options
 import time
 import pandas as pd
@@ -33,6 +32,7 @@ import spacy
 nlp = spacy.load("en_core_web_md")
 from spacy.matcher import PhraseMatcher
 from spacy import displacy
+
 
 base_filename = sys.argv[1]
 input = base_filename + ".htm"
@@ -98,10 +98,22 @@ def remove_non_ascii(text):
 """
 Main body - Selenium to extract data from html
 """
-from selenium.webdriver.common.by import By
 pub_df = pd.DataFrame(columns=['PublishedName', 'Accessions', 'Strains', 'Authority', 'DOI', 'URL'])
 pd.set_option('display.max_columns', None)
 combined_description = []
+
+# Chrome options
+chrome_path = "/home/sharmash/chrome/google-chrome"
+driver_path = "/home/sharmash/chrome/chromedriver"
+options = Options()
+options.binary_location = chrome_path
+options.add_argument("--headless")  # Run in headless mode
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-gpu")
+
+# Set up service and driver
+service = Service(driver_path)
+
 for url in urls:
     counter = 1
     strains = []
@@ -123,9 +135,9 @@ for url in urls:
     snumber = []
     #scrape_with_selenium(url, counter)
     #scrape_with_beautifulsoup(url)
-    options = Options()
-    options.headless = False  # Set to True for headless mode
-    driver = webdriver.Chrome(options=options)
+
+    # Initialize WebDriver with the options and service
+    driver = webdriver.Chrome(service=service, options=options)
 
     #Navigate to the webpage
     driver.get(url)
