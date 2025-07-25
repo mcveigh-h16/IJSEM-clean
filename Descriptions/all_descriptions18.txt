@@ -1,0 +1,101 @@
+Description of Allocatenococcus Oren and Molinari Novoa gen. nov.
+ Allocatenococcus (Al.lo.ca.te.no.coccus. Gr. masc. adj. allos, other; N.L. masc. n. Catenococcus, a genus name of chlorococcalean algae; N.L. masc. n. Allocatenococcus, another Catenococcus).
+Earlier illegitimate homotypic synonym: Catenococcus Sorokin 1994.
+The description of the genus is as given for Catenococcus [2].
+The type species is Allocatenococcus thiocycli (Sorokin 1994) Oren and Molinari Novoa.
+ Description of Allocatenococcus Oren and Molinari Novoa gen. nov.Description of Allocatenococcus thiocycli (Sorokin 1994) Oren and Molinari Novoa comb. nov.
+ Allocatenococcus thiocycli (thi.o.cycli. Gr. neut. n. theion, sulfur (Latin transliteration thium); L. masc. n. cyclus, circle, cycle; N.L. gen. n. thiocycli, of a sulfur circle).
+Illegitimate basonym: Catenococcus thiocycli corrig. Sorokin 1994.
+The description of the species is as given for Catenococcus thiocycli corrig. [2].
+The type strain is TG 5-3T (= ATCC 51228T=DSM 9165T=NCCB 92012), isolated from a near-shore sulfidic hydrothermal area in Matupy Harbour of New Britain Island, Papua New Guinea.
+The GenBank/EMBL/DDBJ accession number for the 16S rRNA gene sequence of the type strain is AF139723.
+ Description of Allocatenococcus thiocycli (Sorokin 1994) Oren and Molinari Novoa comb. nov.Description of Allocoenonia Oren and Molinari Novoa gen. nov.
+ Allocoenonia (Al.lo.coe.noni.a. Gr. masc. adj. allos, other; N.L. fem. n. Coenonia, a genus name of protozoa; N.L. fem. n. Allocoenonia, another Coenonia).
+Earlier illegitimate homotypic synonym: Coenonia Vandamme et al. 1999.
+The description of the genus is as given for Coenonia [5].
+The type species is Allocoenonia anatina (Vandamme et al. 1999) Oren and Molinari Novoa.
+ Description of Allocoenonia Oren and Molinari Novoa gen. nov.Description of Allocoenonia anatina (Vandamme et al. 1999) Oren and Molinari Novoa comb. nov.
+ Allocoenonia anatina (a.na.tina. L. fem. adj. anatina, of or pertaining to the duck).
+Illegitimate basonym: Coenonia anatina Vandamme et al. 1999.
+The description of the species is as given for Coenonia anatina [5]. Coenonia anatina Vandamme et al. 1999 was previously known as Riemerella anatipestifer-like taxon 1502 [7].
+The type strain is 1502-91T (=CCUG 46148T=CIP 106119T=DSM 25327T=LMG 14382T), isolated from a Pekin duck in Germany.
+The GenBank/EMBL/DDBJ accession number for the 16S rRNA gene sequence of the type strain is Y17612.
+The basonym was assigned to Risk Group 2 [German TRBA 466, Einstufung von Prokaryonten (Bacteria und Archaea) in Risikogruppen].
+ Description of Allocoenonia anatina (Vandamme et al. 1999) Oren and Molinari Novoa comb. nov.Description of Allofournierella Oren and Molinari Novoa gen. nov.
+ Allofournierella (Al.lo.four.nier.ella. Gr. masc. adj. allos, other; N.L. fem. n. Fournierella, a genus name of fossil ammonites; N.L. fem. n. Allofournierella, another Fournierella).
+Earlier illegitimate homotypic synonym: Fournierella Togo et al. 2017.
+The description of the genus is as given for Fournierella [8].
+The type species is Allofournierella massiliensis (Togo et al. 2017) Oren and Molinari Novoa.
+ Description of Allofournierella Oren and Molinari Novoa gen. nov.Description of Allofournierella massiliensis (Togo et al. 2017) Oren and Molinari Novoa comb. nov.
+ Allofournierella massiliensis (mas.si.li.ensis. L. fem. adj. massiliensis, of Massilia, the Latin name of Marseille).
+Basonym: Fournierella massiliensis Togo et al. 2017.
+The description of the species is as given for Fournierella massiliensis [8].
+The type strain is AT2T (=CSUR P2014T=DSM 100451T), isolated from the faeces of a healthy 28-year-old French male.
+The GenBank/EMBL/DDBJ accession numbers for the genome sequence and 16S rRNA gene sequence of strain AT2T are FAUK00000000 and LN846908, respectively.
+The Candidatus Fournierella species described by Gilroy et al. [9, 10] should therefore be renamed Candidatus Allofournierella excrementigallinarum, Candidatus Allofournierella merdavium, Candidatus Allofournierella merdigallinarum, Candidatus Allofournierella merdipullorum, Candidatus Allofournierella pullicola and Candidatus Allofournierella pullistercoris. Their descriptions are as follows:
+Candidatus Allofournierella excrementavium (ex.cre.ment.avi.um. L. neut. n. excrementum, excrement; L. fem. n. avis, bird; N.L. gen. n. excrementavium, of bird excrement).
+The description is as given for Candidatus Fournierella excrementavium by Gilroy et al. [9].
+The type genome, MAG ID ChiHcec27-1717, is available via NCBI BioSample SAMN15816881.
+Candidatus Allofournierella excrementigallinarum (ex.cre.men.ti.gal.li.narum. L. neut. n. excrementum, excrement; L. fem. n. gallina, hen; N.L. gen. n. excrementigallinarum, of hen excrement).
+The description is as given for Candidatus Fournierella excrementigallinarum by Gilroy et al. [9].
+The type genome, MAG ID 1136, is available via NCBI BioSample SAMN15816650.
+Candidatus Allofournierella merdavium (merd.avi.um. L. fem. n. merda, faeces; L. fem. n. avis, bird; N.L. gen. n. merdavium, of bird faeces).
+The description is as given for Candidatus Fournierella merdavium by Gilroy et al. [9].
+The type genome, MAG ID ChiBcec4-1730, is available via NCBI BioSample SAMN15816653.
+Candidatus Allofournierella merdigallinarum (mer.di.gal.li.narum. L. fem. n. merda, faeces; L. fem. n. gallina, hen; N.L. gen. n. merdigallinarum, of hen faeces).
+The description is as given for Candidatus Fournierella merdigallinarum by Gilroy et al. [9].
+The type genome, MAG ID 6296, is available via NCBI BioSample SAMN15816675.
+Candidatus Allofournierella merdipullorum (mer.di.pul.lorum. L. fem. n. merda, faeces; L. masc. n. pullus, a young chicken; N.L. gen. n. merdipullorum, of the faeces of young chickens).
+The description is as given for Candidatus Fournierella merdipullorum by Gilroy et al. [9].
+The type genome, MAG ID ChiGjej4B4-18154, is available via NCBI BioSample SAMN15816693.
+Candidatus Allofournierella pullicola (pul.lico.la. L. masc. n. pullus, a young chicken; L. suff. cola, inhabitant of; N.L. n. pullicola, an inhabitant of young chickens).
+The description is as given for Candidatus Fournierella pullicola by Gilroy et al. [9].
+The type genome, MAG ID 2239, is available via NCBI BioSample SAMN15816745.
+Candidatus Allofournierella pullistercoris (pul.li.sterco.ris. L. masc. n. pullus, a young chicken; L. neut. n. stercus, dung; N.L. gen. n. pullistercoris, of young chicken faeces).
+The description is as given for Candidatus Fournierella pullistercoris by Gilroy et al. [9].
+The type genome, MAG ID B5-2728, is available via NCBI BioSample SAMN15816762.
+ Description of Allofournierella massiliensis (Togo et al. 2017) Oren and Molinari Novoa comb. nov.Description of Campylobacter californiensis sp. nov
+ Campylobacter californiensis (ca.li.for.ni.ensis. N.L. masc. adj. californiensis, pertaining to California, USA, where these strains were isolated).
+Cells are motile. After 72 h culture at 37 C under microaerobic conditions on ABA-blood, colonies are glistening, opaque, convex, and circular with entire margins and are 12 mm in diameter. Cells are slightly curved rods and coccoid cells are observed in some cultures. Growth occurs on ABA-blood at both 37 and 42 C under microaerobic conditions and at 37 C under anaerobic conditions. No growth on ABA-blood at 30 C under microaerobic conditions or at any temperature under aerobic conditions. All strains demonstrate oxidase activity but no catalase, alkaline phosphatase, hippuricase, urease or -haemolytic activity. Does not hydrolyse indoxyl acetate. All strains reduce nitrate and selenite but not triphenyltetrazolium chloride. Growth is supported on ABA-blood with a final NaCl concentration of 2% (w/v) and on ABA-blood supplemented with 1% (w/v) glycine. Most strains grow on ABA-blood supplemented with 0.04% TTC. H2S production on TSI agar is variable. Strains are resistant to 30 mg l1 cephalothin and 30 mg l1 nalidixic acid. Five strains were isolated from cattle and four strains were isolated from feral swine. The type strain, RM6914T (=LMG 32304T=CCUG 75329T), was recovered in 2008 from cow faeces in California. Accession numbers for the 16S rRNA gene and genome sequence of the type strain are MW131429 and CP012545, respectively.
+ Description of Campylobacter californiensis sp. novDescription of Rhodobacter flavimaris sp. nov.
+ Rhodobacter flavimaris (fla.vi.maris. L. masc. adj. flavus, yellow; L. neut. n. mare, sea; N.L. gen. n. flavimaris, of the Yellow Sea).
+The cells are Gram-stain-negative, non-motile, aerobic, ovoid to short rods, 0.61.0 m wide and 0.82.6 m long. Colonies on R2A agar medium supplemented with 2.5% sea salt (w/v) are circular, smooth, slightly convex and pale yellow in colour (diameter 0.40.5 m). Positive for catalase activity, but negative for oxidase activity. Growth occurs at 2037 C (optimum, 28 C), pH 6.09.0 (optimum, pH 7.08.0), and with 05.0% sodium chloride (optimum, 03.0%). Utilizes bromo-succinic acid, d-arabitol, d-aspartic acid, cellobiose, d-fructose, d-fucose, d-galactose, d-galacturonic acid, d-gluconic acid, d-glucose-6-PO4, d-lactic acid methyl ester, d-malic acid, maltose, d-mannitol, d-mannose, melibiose, raffinose, d-saccharic acid, d-salicin, d-sorbitol, trehalose, turanose, glycerol, glycyl-l-proline, inosine, l-alanine, l-aspartic acid, l-butyric acid, l-fucose, l-galactonic acid lactone, l-glutamic acid, l-lactic acid, l-malic acid, l-pyroglutamic acid, l-rhamnose, l-serine, methyl pyruvate, myo-inositol, N-acetyl-d-galactosamine, N-acetyl--d-mannosamine, N-acetyl neuraminic acid, pectin, propionic acid, quinic acid, stachyose, sucrose, -d-glucose, lactose, -keto-glutaric acid, -hydroxy-d, methyl -d-glucoside, -amino-butyric acid and 3-methyl glucose in Biolog GEN III microtest system. The major isoprenoid quinone is Q-10 and the major polar lipids are DPG, PG, PC, PE, GL, and PME. The DNA G+C content is 64.0 mol%. The major fatty acid is summed features 8 (C18:1 6c and/or C18:1 7c).
+The type strain, WL0062T (=MCCC 1K06014T=JCM 34676T=GDMCC 1.2427T), was isolated from marine sediment of the Yellow Sea, PR China. The GenBank/EMBL/DDBJ accession numbers are JAJUOS010000024.1 (16S rRNA gene) and JAJUOS010000000 (genome), respectively.
+ Description of Rhodobacter flavimaris sp. nov.Description of Rhodobacter flavescens comb. nov.
+ Rhodobacter flavescens (fla.vescens. L. masc. part. adj. flavescens, becoming yellow, referring to the flavescent colony produced on solid medium).
+Basonym: Sedimentimonas flavescens Mu et al. 2022 [22, 23].
+The description of Rhodobacter flavescens is identical to that proposed for Sedimentimonas flavescens [23].
+The type strain is B57T (=CGMCC1.19488T=KCTC 92053T) isolated from sediment collected in Clam Island, Liaoning Province. The GenBank accession numbers of the 16S rRNA gene sequence and draft genome sequence of strain B57T are MZ433255 and JAHVAI000000000, respectively. Strain WL0115 (=MCCC 1K07531=JCM 35568=GDMCC 1.3088), isolated from seawater of the Yellow Sea, China, is also affiliated to this species.
+ Description of Rhodobacter flavescens comb. nov.Description of Rhodobacter enshiensis comb. nov.
+ Rhodobacter enshiensis (en.shi.ensis. N.L. masc. adj. enshiensis, of or belonging to Enshi, where the type strain was isolated).
+Basonym: Paenirhodobacter enshiensis Wang et al. 2014
+The description of Rhodobacter enshiensis is identical to that proposed for Paenirhodobacter enshiensis [19].
+The type strain, DW2-9T (=CCTCC AB 2011145T=KCTC 15169T), was isolated from soil. The GenBank/EMBL/DDBJ accession numbers are JN797511 (16S rRNA gene) and JFZB01000000 (genome), respectively.
+ Description of Rhodobacter enshiensis comb. nov.Description of Rhodobacter ferrireducens comb. nov.
+ Rhodobacter ferrireducens (fer.ri.re.ducens. L. neut. n. ferrum, iron; L. pres. part. reducens, reducing; N.L. part. adj. ferrireducens, reducing iron).
+Basonym: Sinirhodobacter ferrireducens corrig. Yang et al. 2018 [21].
+The description of Rhodobacter ferrireducens is identical to that proposed for Sinirhodobacter ferrireducens [21].
+The type strain, SgZ-3T (=KACC 16603T=CCTCC AB 2012026T), was isolated from an electrochemical biofilm. The GenBank/EMBL/DDBJ accession numbers are JX113682 (16S rRNA gene) and SAVB01000000 (genome), respectively.
+ Description of Rhodobacter ferrireducens comb. nov.Description of Rhodobacter hankyongi comb. nov.
+ Rhodobacter hankyongi (han.ky.ongi. N.L. gen. n. N. hankyongi, of Hankyong National University where the strain was identified).
+Basonym: Sinirhodobacter hankyongi Lee et al. 2020 [16].
+The description of Rhodobacter hankyongi is identical to that proposed for Sinirhodobacter hankyongi[16].
+The type strain, BO-81T (=KACC 19677T=LMG 30808T), was isolated from sludge sampled in the Republic of Korea. The GenBank/EMBL/DDBJ accession numbers are MN365231 (16S rRNA gene) and RCHI01000000 (genome), respectively.
+ Description of Rhodobacter hankyongi comb. nov.Description of Rhodobacter huangdaonensis comb. nov.
+ Rhodobacter huangdaonensis (hu.ang.dao.nensis. N.L. masc. adj. huangdaonensis, of Huangdao, a district of Qingdao city in Shandong province, PR China, where the type strain was first isolated).
+Basonym: Sinirhodobacter huangdaonensis corrig Xi et al. 2019 [17].
+The description of Rhodobacter huangdaonensis is identical to that proposed for Sinirhodobacter huangdaonensis [17].
+The type strain, L3T (=CGMCC 1.12963T=KCTC 42823T), was isolated from an activated sludge sample retrieved from a municipal wastewater treatment plant in Huangdao, China. The GenBank/EMBL/DDBJ accession numbers are KU042973 (16S rRNA gene) and SAVA01000000 (genome), respectively.
+ Description of Rhodobacter huangdaonensis comb. nov.Description of Rhodobacter populi comb. nov.
+ Rhodobacter populi (popu.li. L. gen. n. populi, of the poplar tree, of the genus Populus).
+Basonym: Sinirhodobacter populi corrig. Xu et al. 2019 [20].
+The description of Rhodobacter populi is identical to that proposed for Sinirhodobacter populi [20].
+The type strain, SK2B-1T (=CFCC 14580T=KCTC 52802T), was isolated from symptomatic bark tissue of Populus euramericana canker. The GenBank/EMBL/DDBJ accession numbers are MH282460 (16S rRNA gene) and SAUV00000000 (genome), respectively.
+ Description of Rhodobacter populi comb. nov.Description of Halostreptopolyspora gen. nov.
+ Halostreptopolyspora (Ha. lo. strep. to. po. ly. spo'ra. Gr. masc. n. hals, salt; Gr. masc. adj. streptos, pliant, bent; Gr. masc. adj. polys, many; Gr. fem. n. spora, a seed; N. L. fem. n. Halostreptopolyspora halophilic bacteria that produce pliant or bent spore chains.).
+Gram-positive-staining, aerobic and moderately halophilic. The substrate mycelia are well developed and non-fragmented. The mature aerial hyphae have single-, double- or triple-wrinkled spore(s). Whole-cell hydrolysates contain meso-DAP and mannose as diagnostic markers. The menaquinones are MK-10(H8), MK-10(H6) and MK-9(H10). The polar lipids are diphosphatidylglycerol, phosphatidylglycerol, phosphatidylcholine, unidentified phospholipids and unidentified glycolipid. The major fatty acids are iso-C15:0 and anteiso-C15:0. The type spcies is Halostreptopolyspora alba.
+ Description of Halostreptopolyspora gen. nov.Description of Halostreptopolyspora alba sp. nov.
+ Halostreptopolyspora alba (alba. L. fem. adj. alba, white).
+Displays the following properties in addition to those given in the genus description. Well-formed aerial mycelium when cultured on ISP 2 and nutrient agar. Moderate growth on ISP 3 and Cazpeks agar, weak growth on ISP 4 and ISP 5 modified with the addition of 10% (w/v) NaCl and adjusting pH to 7.5 with 10 M NaOH. No growth on potatodextrose agar medium. Colony colour is dependent on the test medium. Substrate mycelium colour is white on ISP 3, 4 and 5, Czapeks agar and nutrient agar, while no discernible colour on ISP 2. Aerial mycelium is white on ISP 3, 4 and 5 and Czapeks agar. Diffusible pigment is not observed on any media tested. Growth occurs at pH 6.09.0, with 328 % (w/v) NaCl, and at 1045 C; optimal growth occurs at pH 7.08.0, with 516% (w/v) NaCl and at 37 C. Cellobiose, l-malic acid, myo-inositol, d-ribose, l-arabinose, lactose, creatinine, raffinose, l-rhamnose, cyclodextrin, citric acid, d-xylose, d-sorbitol, sucrose, d-galactose, salicin, d-arabinose, d-mannitol and xylitol can be used as sole carbon sources, but not dextrin, glycerin, trehalose and -d-glucose. Hypoxanthine, leucine, threonine, proline, methionine, histidine, glutamine and cysteine can be utilized as sole nitrogen sources, but not leucine, isoleucine, adenine and l-asparagine. Positive for catalase activity, oxidase activity, gelatin liquefaction, nitrate reduction and hydrolysis of Tweens 20, 40, 60 and 80. Major cellular fatty acids are anteiso-C15:0 and iso-C15:0. Susceptible to (mg per disc): tetracycline (30), erythromycin (15), kanamycin (30), ciprofloxacin (5), vancomycin (30), clindamycin (2), clarithromycin (15), furazolidone (300), trimethoprim (5), neomycin (30) and midecamycin (30). Resistant to (mg per disc): oxacillin (1), gentamicin (10), polymyxin (300), ofloxacin (5), streptomycin (10), tobramycin (10), amoxicillin (20), penicillin (10), amphotericin (30), ampicillin (10) and netilmicin (30). Results from API 50CH tests show that acids are produced from glycerol, d-glucose, d-mannose, inositol, N-acetylglucosamine, arbutin, aesculin, salicin, cellobiose, maltose and d-tagatose. In the API ZYM test, positive for alkaline phosphatase, esterase C4, esterase lipase C8, leucine arylamidase, valine arylamidase, cystine arylamidase, -chymotrypsin, acid phosphatase, naphthol-AS-BI-phosphohydrolase, -galactosidase, -glucuronidase, -glucosidase, -glucosidase and N-acetyl--glucosaminidase. The whole-cell sugars are glucose, galactose and rhamnose.
+The type strain, YIM 96095T (=KCTC 49266T=CGMCC 4.7636T), was isolated from a soil sample collected from Aiding Lake, Xinjiang province, north-west China. The DNA G+C content of the type strain is 69.7 mol%. The NCBI GenBank accession number for the 16S rRNA gene sequence of strain YIM 96095T is MK182318. The draft whole genome sequence for YIM 96095T has been deposited at DDBJ/ENA/GenBank under accession number GCA_003725585.1.
+ Description of Halostreptopolyspora alba sp. nov.

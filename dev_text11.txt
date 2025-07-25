@@ -1,0 +1,5 @@
+The type strain, MSK294T (=DSM 117171T=JCM 36673T), was isolated from a nasopharyngeal swab collected in April 2019 from an 11-month-old female infant in a rural area near Gaborone, Botswana (latitude: 24.647728, longitude: 25.824646).
+The partial 16S rRNA gene sequence of strain MSK294T is available in GenBank (accession number: PP193857).
+The GenBank accession numbers for the genomic sequences of the D. savutiense sp. nov. strains described in this study are GCA_039830105.1 (MSK211), GCA_039830095.1 (MSK294T=DSM 117171T=JCM 36673T), GCA_039830085.1 (MSK312), and GCA_039830075.1 (MSK433).
+The type strain is SP2S1-2T (CCUG 76457T=CECT 30688T), isolated from sediments collected in Vaxholm, Sweden.
+The type strain is SP1S1-4T (CCUG 76453T=CECT 30684T), isolated from sediments collected in Vaxholm, Sweden.

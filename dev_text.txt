@@ -1,0 +1,16 @@
+A Gram-stain-negative bacterium, designated I-24T, was isolated from soil of a natural salt meadow.
+Comparative 16S rRNA gene analysis indicated that strain I-24T has closest similarities to Spirosoma agri KCTC 52727T (95.9 %) and Spirosoma terrae KCTC 52035T (95.5 %). 
+The type strain is MJ115T (=KCTC 72237T=NBRC 113963T). 
+Thus, Pareuzebyella sediminis gen. nov. sp. nov. is proposed with type strain S2-4-21T (=MCCC 1K03818T=KCTC 72152T), and another strain MT2-5-19 (=KCTC 72539=MCCC 1K03874).
+The whole genome shotgun projects of strain S2-4-21T and MT2-5-19 have been deposited at DDBJ/ENA/GenBank under the accessions of VTZS00000000 and VTZT00000000, respectively.
+The type strain is KUDC8001T (=KCTC 82078T=CGMCC 1.18475T) that was isolated from the rhizospheric soil collected from the Dokdo Islands, Republic of Korea.
+Clear distinctions between strain I-24T and S. agri KCTC 52727T or S. terrae KCTC 52035T were shown in the pairwise average nucleotide identity results with values of 76.71 and 74.01 %, respectively.
+The type strain, I-24T (DSM 111055T=KCTC 72613T), was isolated from a soil sample collected in a natural salt meadow near Bad Endbach, Hessen, Germany.
+The 16S rRNA gene sequence and the whole genome sequence of the strain KUDC8001T have been deposited in GenBank/EMBL/DDBJ under accession numbers MT680409 and CP055152-CP055153.
+The GenBank/EMBL/DDBJ accession number for the 16S rRNA gene sequence of strain A18JL241T is OR603944.
+Based upon the data of polyphasic characterization obtained in the present study, a novel species, Lactiplantibacillus paraxiangfangensis sp. nov., is proposed and the type strain is 231-9T (=JCM 36258T=CCTCC AB 2023133T).
+The type strain, MSK294T (=DSM 117171T=JCM 36673T), was isolated from a nasopharyngeal swab collected in April 2019 from an 11-month-old female infant in a rural area near Gaborone, Botswana (latitude: 24.647728, longitude: 25.824646).
+The partial 16S rRNA gene sequence of strain MSK294T is available in GenBank (accession number: PP193857).
+The GenBank accession numbers for the genomic sequences of the D. savutiense sp. nov. strains described in this study are GCA_039830105.1 (MSK211), GCA_039830095.1 (MSK294T=DSM 117171T=JCM 36673T), GCA_039830085.1 (MSK312), and GCA_039830075.1 (MSK433).
+The type strain is SP2S1-2T (CCUG 76457T=CECT 30688T), isolated from sediments collected in Vaxholm, Sweden.
+The type strain is SP1S1-4T (CCUG 76453T=CECT 30684T), isolated from sediments collected in Vaxholm, Sweden.
