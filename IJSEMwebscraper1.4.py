@@ -251,7 +251,7 @@ for filtered_url in filtered_urls:
         outer_html = element.get_attribute("outerHTML")
         if "Description of" in description1:          
             #print(outer_html)
-            spans = soup.findAll('span', attrs = {'class' : 'tl-lowest-section'})
+            spans = soup.find_all('span', attrs = {'class' : 'tl-lowest-section'})
             for span in spans:
                 if "Description of" in span.text:   
                     #print (span.text)

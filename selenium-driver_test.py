@@ -7,8 +7,8 @@ Created on Mon Apr 21 13:49:04 2025
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-
-service = Service("/net/snowman/vol/export2/mcveigh.cache/selenium/chromedriver")
+import os
+service = Service("/net/snowman/vol/export2/mcveigh/.cache/selenium/chromedriver")
 
 # Print the path to the driver
 print(f"Using ChromeDriver from: {service}")
