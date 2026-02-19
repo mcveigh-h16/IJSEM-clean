@@ -11,3 +11,6 @@ Script is optimized for bacterial type strain detections. Future improvements co
 standard python version of the notebook with same core functionality. Updated for windows 11 computer. Call the script with the prefix of the .htm input file. Output files saved with same prefix
 ## IJSEMwebscraper_SS3.py 
 modification of IJSEMwebscraper.py for Shoba's web driver installation. 
+
+## labelstudio_to_spacy2.py
+Converts .json training data exported from label-studio to .spacy. 
