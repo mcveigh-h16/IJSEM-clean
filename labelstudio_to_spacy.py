@@ -1,10 +1,27 @@
+# -*- coding: utf-8 -*-
+"""
+Created on February 9, 2026
+
+@author: mcveigh
+"""
+
+# -*- coding: utf-8 -*-
+"""
+Created on February 9, 2026
+
+Converts .json annotations from label-studio to spacy annotations. 
+Only works if there are no issues in the .json file. 
+
+@author: mcveigh
+"""
+
 import json
 import spacy
 from spacy.tokens import DocBin
 
 
-INPUT_FILE = "data.json"      # your Label Studio export
-OUTPUT_FILE = "train.spacy"  # output file
+INPUT_FILE = "training_annotations.json"      # your Label Studio export
+OUTPUT_FILE = "training_annotations.spacy"  # output file
 LANG = "en"
 
 
