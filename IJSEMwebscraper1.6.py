@@ -26,9 +26,7 @@ import os
 import sys
 import bs4
 from bs4 import BeautifulSoup
-import requests
 import numpy as np
-from datetime import datetime
 from nameparser import HumanName
 import spacy
 
@@ -150,16 +148,6 @@ def debug_ner(description: str, *, url: str = "", header: str = ""):
 
     orgs = find_organisms(description)
     strains = find_strains(description)
-
-    doc2 = nlp_strain(description)
-
-    title_html = f"<h3>{header}</h3>" if header else ""
-    url_html = f"<p><b>URL:</b> {url}</p>" if url else ""
-    lists_html = (
-        "<p><b>Extracted (NER):</b><br>"
-        f"<b>organism</b>: {orgs}<br>"
-        f"<b>strain</b>: {strains}</p>"
-    )
 
     # Show a short snippet of the description to orient debugging
     snippet = (description[:1500] + "…") if len(description) > 1500 else description
@@ -345,14 +333,10 @@ pd.set_option('max_colwidth', None)
 pub_df['Strains'] = [', '.join(map(str, l)) for l in pub_df['Strains']]
 pub_df['Strains'] = pub_df['Strains'].astype(pd.StringDtype())
 pub_df['Strains'] = pub_df['Strains'].str.replace(',', ', ')
-
-#pub_df = pub_df.drop_duplicates(subset='PublishedName', keep="first")
 pub_df.explode(['PublishedName']).reset_index(drop=True)
-
 pub2_df = pub_df.explode(['Accessions']).reset_index(drop=True)
 pub4_df = pub2_df.explode(['PublishedName']).reset_index(drop=True)
 pub4_df.rename(columns={'Accessions': 'accession'}, inplace=True)
-
 pub4_df = pub4_df[pub4_df['accession'].isnull() | ~pub4_df[pub4_df['accession'].notnull()].duplicated(subset='accession', keep='first')]
 
 df_unique = pub4_df.drop_duplicates(["accession"], keep="first")
@@ -382,7 +366,6 @@ combine_df = combine_df.sort_values(
     key=lambda col: col.str.lower(),
     na_position='last'
 ).reset_index(drop=True)
-#combine_df
 
 
 def highlight_rows(row):

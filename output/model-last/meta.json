@@ -2,16 +2,16 @@
   "lang":"en",
   "name":"pipeline",
   "version":"0.0.0",
-  "spacy_version":">=3.8.2,<3.9.0",
+  "spacy_version":">=3.8.5,<3.9.0",
   "description":"",
   "author":"",
   "email":"",
   "url":"",
   "license":"",
-  "spacy_git_version":"63f1b53",
+  "spacy_git_version":"d0c705c",
   "vectors":{
     "width":300,
-    "vectors":342918,
+    "vectors":20000,
     "keys":684830,
     "name":"en_vectors",
     "mode":"default"
@@ -21,7 +21,10 @@
 
     ],
     "ner":[
-      "STRAIN"
+      "accession",
+      "basionym",
+      "organism",
+      "strain"
     ]
   },
   "pipeline":[
@@ -36,17 +39,32 @@
 
   ],
   "performance":{
-    "ents_f":0.9438202247,
-    "ents_p":0.9545454545,
-    "ents_r":0.9333333333,
+    "ents_f":0.9582618639,
+    "ents_p":0.9479638009,
+    "ents_r":0.9687861272,
     "ents_per_type":{
-      "STRAIN":{
-        "p":0.9545454545,
-        "r":0.9333333333,
-        "f":0.9438202247
+      "organism":{
+        "p":0.9539473684,
+        "r":0.9931506849,
+        "f":0.9731543624
+      },
+      "strain":{
+        "p":0.9289340102,
+        "r":0.9506493506,
+        "f":0.9396662388
+      },
+      "accession":{
+        "p":0.978021978,
+        "r":1.0,
+        "f":0.9888888889
+      },
+      "basionym":{
+        "p":1.0,
+        "r":0.4,
+        "f":0.5714285714
       }
     },
-    "tok2vec_loss":0.0000000021,
-    "ner_loss":0.0000000138
+    "tok2vec_loss":161.8087467202,
+    "ner_loss":109.8642773341
   }
 }
