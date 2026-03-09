@@ -492,7 +492,8 @@ taxdata_file_name = (r'acclist.taxdata')
 srcchk_df = pd.read_csv(taxdata_file_name, sep='\t', index_col=None, low_memory=False)
 srcchk_df.drop(columns=['Unnamed: 4'], inplace=True)
 srcchk_df.rename(columns={'organism': 'NCBIname'}, inplace=True)
-srcchk_df['accession'] = srcchk_df['accession'].astype(str).replace('\.\d+', '', regex=True).astype(str)
+#srcchk_df['accession'] = srcchk_df['accession'].astype(str).replace('\.\d+', '', regex=True).astype(str)
+srcchk_df['accession'] = srcchk_df['accession'].astype(str).replace(r'\.\d+', '', regex=True).astype(str)
 srcchk_df = srcchk_df.dropna(subset=['NCBIname'])
 srcchk_df
 
