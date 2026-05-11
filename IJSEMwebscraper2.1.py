@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-"""IJSEMwebscraper2.0_firefox.py
+"""IJSEMwebscraper2.1.py
 
 Standard python implementation of IJSEMwebscraper1.7_debug.ipynb Jupyter
 notebook implementation but with added spacy AI detection for strains, basionyms, organism names and accession
 numbers. Two step search for accession numbers NER and Regex plus filtering to remove non-INSDC accessions.
 This .py version is a streamlined version of the script that others
-can execute. This version is modified to use Firefox webdriver instead of Chrome. 
+can execute.
 
 
 Run:
-    python IJSEMwebscraper2.o_firefox.py <BASE_FILENAME>
+    python IJSEMwebscraper2.1.py <BASE_FILENAME>
 
 Environment (optional):
     DEBUG_NER=1
@@ -18,7 +18,7 @@ Environment (optional):
 import selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.chrome.options import Options
 import time
 import pandas as pd
 import re
@@ -44,30 +44,6 @@ base_filename = sys.argv[1]
 input_file = base_filename + ".htm"
 alldescriptions = base_filename + ".txt"
 output = base_filename + ".xlsx"
-
-# Debug toggle: set DEBUG_EXTRACT=1 to print what Selenium sees for each URL.
-DEBUG_EXTRACT = os.getenv("DEBUG_EXTRACT", "0") == "0"
-DEBUG_EXTRACT_LIMIT = int(os.getenv("DEBUG_EXTRACT_LIMIT", "0"))  # 0 means no limit
-
-def _print_page_debug(driver, url):
-    print("\nURL:", url)
-    print("  current_url:", driver.current_url)
-    print("  title:", driver.title)
-    print("  page_source_length:", len(driver.page_source or ""))
-    title_blocks = driver.find_elements(By.CSS_SELECTOR, "div.tl-main-part.title")
-    lowest_blocks = driver.find_elements(By.CLASS_NAME, "tl-lowest-section")
-    print("  tl-main-part.title count:", len(title_blocks))
-    print("  tl-lowest-section count:", len(lowest_blocks))
-    if DEBUG_EXTRACT:
-        for i, element in enumerate(title_blocks, start=1):
-            txt = (element.text or "").strip()
-            if txt:
-                print(f"  [title {i}] {txt}")
-        for i, element in enumerate(lowest_blocks, start=1):
-            txt = (element.text or "").strip()
-            if txt:
-                print(f"  [lowest {i}] {txt}")
-
 
 
 # --- Baseline 1.6 changes: load trained NER model once + organism NER + debug helpers ---
@@ -275,10 +251,11 @@ for filtered_url in filtered_urls:
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
-    # Selenium Manager will resolve the matching ChromeDriver/browser automatically.
-    driver = webdriver.Firefox(options=options)
-    #print("Firefox browser version:", driver.capabilities.get("browserVersion"))
-    #print("Firefox driver info:", driver.capabilities.get("chrome"))
+
+    # Use the Chrome binary provided by the environment (via ~/.ncbi_hints).
+    # Avoid hardcoding a cached browser path so system Chrome/Chromedriver updates
+    # do not break the script.
+    driver = webdriver.Chrome(options=options)
 
     counter = 1
     strains = []
@@ -302,34 +279,29 @@ for filtered_url in filtered_urls:
 
     # Navigate to the webpage
     driver.get(filtered_url)
+    driver.capabilities["browserVersion"]
+    len(driver.page_source)
 
     # Allow time for dynamic content to load (you may need to use WebDriverWait for more robust waiting)
     time.sleep(3)
 
-    _print_page_debug(driver, filtered_url)
-
     html = driver.page_source
 
-    title_elements = driver.find_elements(By.CLASS_NAME, "item-meta-data__item-title")
-    if DEBUG_EXTRACT:
-        print("  item-meta-data__item-title count:", len(title_elements))
-    for element in title_elements:
+    for element in driver.find_elements(By.CLASS_NAME, "item-meta-data__item-title"):
+        # print(element.text)
         title = element.text
-        #print(title)
+        # print(title)
 
-    doi_elements = driver.find_elements(By.PARTIAL_LINK_TEXT, "doi.org")
-    if DEBUG_EXTRACT:
-        print("  doi link count:", len(doi_elements))
-    for element in doi_elements:
+    for element in driver.find_elements(By.PARTIAL_LINK_TEXT, "doi.org"):
         doi = element.text
-        #print(doi)
+        # print(doi)
 
     # find publication year
     for element in driver.find_elements(By.XPATH,
                                         "//*[@id='bellowheadercontainer']/main/div[2]/div/ul/li[3]/span/span[2]"):
         date = element.text
         year = date[-4:]
-        #print(year)
+        # print(year)
 
     # find authors
     for element in driver.find_elements(By.XPATH, "//*[@id='bellowheadercontainer']/main/div[2]/div/ul/li[1]/span"):
@@ -379,8 +351,8 @@ for filtered_url in filtered_urls:
                 cleaned_text = remove_non_ascii(description)
                 combined_description.append(cleaned_text)
                 debug_ner(cleaned_text, url=filtered_url, header='Description block (debug)')
-                #print(cleaned_text)
-                #print(description)
+                # print(cleaned_text)
+                # print(description)
 
                 # find the organism names (NER - label 'organism')
                 orgname = find_organisms(cleaned_text)
@@ -407,7 +379,7 @@ for filtered_url in filtered_urls:
                 row_data = [orgname, accessions, strains, basionym, authority, doi, filtered_url]
                 length = len(pub_df)
                 pub_df.loc[length] = row_data
-            #print('BREAK1')
+            # print('BREAK1')
 
     for element in driver.find_elements(By.CLASS_NAME, "tl-lowest-section"):  # finds section headers
         description1 = element.text
@@ -426,7 +398,7 @@ for filtered_url in filtered_urls:
                         combined_description.append(cleaned_text)
                     debug_ner(cleaned_text, url=filtered_url, header='Description block (debug)')
                     # print(cleaned_text)
-                    #print(description)
+                    # print(description)
 
                     # find the organism names (NER - label 'organism')
                     orgname = find_organisms(cleaned_text)
@@ -457,7 +429,7 @@ for filtered_url in filtered_urls:
                     row_data = [orgname, accessions, strains, basionym, authority, doi, filtered_url]
                     length = len(pub_df)
                     pub_df.loc[length] = row_data
-                    #print('BREAK2')
+                    # print('BREAK2')
 
     # Close the browser window
     driver.quit()
@@ -520,12 +492,8 @@ with open('acclist', 'w') as f:
 os.system("/netopt/ncbi_tools64/bin/srcchk -i acclist -f taxname,taxid,strain -o acclist.taxdata")
 
 taxdata_file_name = (r'acclist.taxdata')
-if not os.path.exists(taxdata_file_name) or os.path.getsize(taxdata_file_name) == 0:
-    print("acclist.taxdata is empty; skipping srcchk merge.")
-    srcchk_df = pd.DataFrame(columns=["accession", "NCBIname", "taxid", "strain"])
-else:
-    srcchk_df = pd.read_csv(taxdata_file_name, sep='\t', index_col=None, low_memory=False)
-srcchk_df.drop(columns=['Unnamed: 4'], inplace=True, errors='ignore')
+srcchk_df = pd.read_csv(taxdata_file_name, sep='\t', index_col=None, low_memory=False)
+srcchk_df.drop(columns=['Unnamed: 4'], inplace=True)
 srcchk_df.rename(columns={'organism': 'NCBIname'}, inplace=True)
 #srcchk_df['accession'] = srcchk_df['accession'].astype(str).replace('\.\d+', '', regex=True).astype(str)
 srcchk_df['accession'] = srcchk_df['accession'].astype(str).replace(r'\.\d+', '', regex=True).astype(str)
@@ -563,6 +531,7 @@ def highlight_rows(row):
 new_df = combine_df.style.apply(highlight_rows, axis=1, subset=['PublishedName', 'NCBIname'])
 
 new_df.to_excel(output, engine='xlsxwriter', index=False, na_rep='')
+
 
 print("\n")
 print("Script complete output saved as", output)
