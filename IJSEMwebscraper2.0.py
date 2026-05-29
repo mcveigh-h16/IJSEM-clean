@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""IJSEMwebscraper1.7.py
+"""IJSEMwebscraper2.0.py
 
 Standard python implementation of IJSEMwebscraper1.7_debug.ipynb Jupyter
 notebook implementation but with added spacy AI detection for strains, basionyms, organism names and accession
@@ -9,7 +9,7 @@ can execute.
 
 
 Run:
-    python IJSEMwebscraper1.8.py <BASE_FILENAME>
+    python IJSEMwebscraper2.0.py <BASE_FILENAME>
 
 Environment (optional):
     DEBUG_NER=1
@@ -18,7 +18,9 @@ Environment (optional):
 import selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-chrome_path = "/home/mcveigh/.cache/selenium/chrome/linux64/138.0.7204.183/chrome"
+#chrome_path = "/home/mcveigh/.cache/selenium/chrome/linux64/138.0.7204.183/chrome"
+chrome_path = "/usr/local/chrome/147.0.7727.50/bin/chrome"
+#chrome_path = "/home/mcveigh/.cache/selenium/chrome/linux64/149.0.7827.22/chrome"
 
 from selenium.webdriver.chrome.options import Options
 import time
@@ -251,7 +253,7 @@ for filtered_url in filtered_urls:
 
     options = Options()
     options.binary_location = chrome_path
-    options.add_argument("--headless")
+    #options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     driver = webdriver.Chrome(options=options)
