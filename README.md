@@ -14,3 +14,25 @@ modification of IJSEMwebscraper.py for Shoba's web driver installation.
 
 ## labelstudio_to_spacy2.py
 Converts .json training data exported from label-studio to .spacy. 
+
+## IJSEMwebscraper1.7.ipynb
+Webscraper no longer working reliably but the SPACY training instructions and testing are here which does work. Uses NER for detection of strains, organism names & basionyms using the new spacy training set.
+
+## IJSEMwebscraper2.0.py (was IJSEMwebscraper1.8.py)
+No longer working reliably. Uses NER for detection of strains, organism names, basionyms and accessions using the new spacy training set. Accession detection uses NER first but if not found then tries Regex. Post-processing then removes non-INSDC accessions. 
+
+## ijsem_html_parser.py 
+Current working version. Uses beautiful soup in place of selenium combined with spacy NER for detection. 
+Added security at IJSEM is blocking programmatic access to the html files. Tried multiple approaches to getting around this but so far no luck. Work around was to modify the script to remove the programmatic download by selenium. This now requires the user to manually obtain the html files and save them in a directory.
+
+Two approaches to obtaining the html files 
+
++ click on each publication and allow it to fully render in your browser 
++ Once you have the rendered publication, right click > save as .html in a specific linux directory (i use one called input and this is hard coded in the script
++ Run ijsem_html_parser.py (python ijsem_html_parser.py) Script will then use the same AI driven search in IJSEMwebscraper2.0.py to extract the taxonomic information from each paper and save the output in an excel file. 
++ Note input and output directories are hard coding in the script and need to be modified for each user. 
++ Be sure to clean out old files from input directory before running new data, the script will simply analyze everything it finds in the input directory
+U-se a URL list and build in chrome extension to open multiple URLs at once
+https://chromewebstore.google.com/?pli=1 has two extensions Bulk URL opener and SingleFile which can be used to open a previously determined list of URLs and save the html to a directory
++ SingleFile will save the html files to the download directory on your computer. If you do this you must then manually move the saved files to the input directory in linux. 
++ Once you have the saved html files in the input directory, simply run ijsem_html_parser.py or ijsem_html_paser.ipynb 
