@@ -36,3 +36,9 @@ U-se a URL list and build in chrome extension to open multiple URLs at once
 https://chromewebstore.google.com/?pli=1 has two extensions Bulk URL opener and SingleFile which can be used to open a previously determined list of URLs and save the html to a directory
 + SingleFile will save the html files to the download directory on your computer. If you do this you must then manually move the saved files to the input directory in linux. 
 + Once you have the saved html files in the input directory, simply run ijsem_html_parser.py or ijsem_html_paser.ipynb 
+
+bulk_url_extractor.py
++ Bulk URL extractor. Use Beautiful Soup to extract URLs from a single HTML file saved from IJSEM weekly publication.
+usage:
+    python bulk_url_extractor.py <base_filename>
+    Outputs a text file <base_filename>.txt with one URL per line. This can be used with BULK URL Opener extension in Chrome.
