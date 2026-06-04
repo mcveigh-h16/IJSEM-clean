@@ -275,7 +275,7 @@ def main() -> int:
     INPUT_HTML_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    html_files = sorted(list(INPUT_HTML_DIR.glob("*.html")) + list(INPUT_HTML_DIR.glob("*.htm")))
+    html_files = sorted(list(INPUT_HTML_DIR.glob("*.html")) + list(INPUT_HTML_DIR.glob("*.mhtml")))
     if not html_files:
         print(f"No .html/.htm files found in {INPUT_HTML_DIR}")
         return 1
