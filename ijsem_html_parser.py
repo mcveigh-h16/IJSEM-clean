@@ -323,7 +323,7 @@ def main() -> int:
 
         # Fallback: only if the primary path found no Description of section.
         if not found_main_description:
-            for element in article_root.select("span.tl-lowest-section"):
+            for element in article_root.select(".tl-lowest-section"):
                 description1 = element.get_text(" ", strip=True)
                 if "Description of" not in description1:
                     continue
