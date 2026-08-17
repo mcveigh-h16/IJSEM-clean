@@ -30,6 +30,7 @@ from charset_normalizer import from_path
 from nameparser import HumanName
 import spacy
 from spacy.matcher import PhraseMatcher
+import warnings
 
 # -------------------------------------------------------------------
 # Configuration
@@ -266,7 +267,10 @@ def add_description_row(cleaned_text: str, filtered_url: str, authority: str, do
 
     strains = find_strains(cleaned_text)
     basionym = find_basionyms(cleaned_text)
-
+    #if orgname != [] and accessions == []:
+    #    print("WARNING", orgname, "accession not found")
+    if orgname and not accessions:
+        print(f"\n[WARNING] Accession number not found for: {', '.join(orgname)}.\n")
     row_data = [orgname, accessions, strains, basionym, authority, doi, filtered_url]
     pub_df.loc[len(pub_df)] = row_data
 
